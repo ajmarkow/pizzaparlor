@@ -8,7 +8,7 @@ By **_AJ Markow_**
 
 ## Description
 
-_{Description}_
+_A javascript based application intended for pizza ordering. The application takes the size of pizza requested, as well as toppings wanted. The topping and size information is then updated in a pizza object, so properties of the pizza can be displayed in the user interface after the order has been submitted._
 
 ## Setup/Installation Requirements
 
@@ -18,7 +18,7 @@ _{Description}_
 
 ## Known Bugs
 
-_Project Debugging Ongoing_
+_No known bugs as of most recent commit on Friday, August 28, 2020_
 
 ## Support and contact details
 
