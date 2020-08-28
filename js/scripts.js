@@ -47,8 +47,8 @@ $(document).ready(function () {
     pizzaOrdered.pizzasummary.splice(0, 1, $("#size").val());
     pizzaOrdered.setCost();
     pizzaOrdered.cost = pizzaOrdered.pizzasummary.slice(1);
-    console.log(pizzaOrdered.pizzasummary);
-    $("outputforpizzacost").replaceWith(pizzaOrdered.pizzasummary.slice(1));
+    console.log(pizzaOrdered);
+    $("#outputforpizzacost").replaceWith(pizzaOrdered.cost);
     $("#outputforordersummary").replaceWith(
       "Your pizza is a size " +
         pizzaOrdered.size +
