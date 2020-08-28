@@ -1,47 +1,36 @@
-// * Business Logic
-function Pizza(size, toppings) {
-  this.size = size;
-  this.toppings = toppings;
-  this.pizzasummary = [];
-  this.cost = 0;
-  this.currentId = 0;
-}
-
-var sizeinput = $("#size").val();
-
-Pizza.prototype.assignId = function () {
-  this.currentId += 1;
-  return this.currentId;
-};
-
-// * Interface Logic
-// Pizza.prototype.selectSize = function (thepizza) {
-//   if (sizeinput === "small") {
-//     Pizza.size = "small";
-//     Pizza.cost = +5;
-//     thepizza.pizzasummary.push("small");
-//   } else sizeinput === large;
-//   {
-//     Pizza.size = "large";
-//     Pizza.cost = +10;
-//     thepizza.pizzasummary.push("large");
-//   }
-// };
-
-//   Pizza.prototype.recordToppings = function () {};
-
-//   console.log(this.pizasummary);
-// };
-
-var toppingsarray = ["pepperoni", "bell pepper"];
-
 $(document).ready(function () {
+  // * Business Logic
+  function Pizza(size) {
+    this.size = size;
+    this.toppings = [];
+    this.pizzasummary = [];
+    this.cost = 0;
+    this.currentId = 0;
+  }
+
+  var sizeinput = $("#size").val();
+  var toppingsselected = $(".radio:checked").val();
+
+  Pizza.prototype.assignId = function () {
+    this.currentId += 1;
+    return this.currentId;
+  };
+
+  Pizza.prototype.determineCost = function () {};
+
+  Pizza.prototype.addSelectedToppings = function () {
+    $(".radio").each(function () {
+      toppings.push($("input[type=radio]:checked").val());
+    });
+  };
+  // * Interface Logic
+
   $("form").submit(function (event) {
     event.preventDefault();
-    let toppingsselected = toppingsarray;
-    let pizzaOrdered = new Pizza(sizeinput, toppingsselected);
-    pizzaOrdered.pizzasummary.push($("#size").val());
-    // pizzaOrdered.selectSize(pizzaOrdered);
-    console.log(pizzaOrdered.pizzasummary);
+    let pizzaOrdered = new Pizza($("#size").val());
+    pizzaOrdered.pizzasummary.splice(0, 1, $("#size").val());
+    pizzaOrdered.addSelectedToppings();
+    console.log(pizzaOrdered);
+    $("#outputforordersummary").replaceWith(pizzaOrdered.pizzasummary);
   });
 });
