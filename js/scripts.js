@@ -1,3 +1,5 @@
+// * Business Logic
+
 function Pizza(size) {
   this.size = size;
   this.toppings = [];
@@ -5,15 +7,6 @@ function Pizza(size) {
   this.cost = 0;
   this.currentId = 0;
 }
-
-// var sizeinput = String($("#size").val());
-var toppingsselected = $(".radio:checked").val();
-var topping1 = $("input#topping1").val();
-var topping2;
-var topping3;
-var topping4;
-var topping5;
-var topping6;
 
 Pizza.prototype.assignId = function () {
   this.currentId += 1;
@@ -26,19 +19,29 @@ Pizza.prototype.setCost = function () {
   } else {
     return this.pizzasummary.push("$28");
   }
-
-  // if (sizeinput === "large") {
-  //   this.cost ="$28";
-  //   return (this.cost = "$28");
-  // } else {
-  //   this.cost.replaceWith("$18");
-  //   return (this.cost = "$18");
-  // }
 };
 
-Pizza.prototype.addSelectedToppings = function (topping) {
-  Pizza.toppings.push(topping);
+Pizza.prototype.setToppings = function () {
+  if (String($("#toppingcombo").val()) === "hawaiian") {
+    this.pizzasummary.push("hawaiian");
+    return this.toppings.push("canadian bacon", "pineapple");
+  } else if (String($("#toppingcombo").val()) === "taco") {
+    this.pizzasummary.push("taco");
+    return this.toppings.push("ground beef", "zesty salsa");
+  } else if (String($("#toppingcombo").val()) === "margherita") {
+    this.pizzasummary.push("margherita");
+    return this.toppings.push("basil", "ricotta", "garlic sauce");
+  }
 };
+
+// if (sizeinput === "large") {
+//   this.cost ="$28";
+//   return (this.cost = "$28");
+// } else {
+//   this.cost.replaceWith("$18");
+//   return (this.cost = "$18");
+// }
+
 // * Interface Logic
 $(document).ready(function () {
   $("form").submit(function (event) {
@@ -46,8 +49,9 @@ $(document).ready(function () {
     let pizzaOrdered = new Pizza($("#size").val());
     pizzaOrdered.pizzasummary.splice(0, 1, $("#size").val());
     pizzaOrdered.setCost();
-    pizzaOrdered.cost = pizzaOrdered.pizzasummary.slice(1);
+    pizzaOrdered.setToppings();
     console.log(pizzaOrdered);
+    pizzaOrdered.cost = pizzaOrdered.pizzasummary.slice(1, 2);
     $("#outputforpizzacost").replaceWith(pizzaOrdered.cost);
     $("#outputforordersummary").replaceWith(
       "Your pizza is a size " +
@@ -55,7 +59,10 @@ $(document).ready(function () {
         " and will cost " +
         pizzaOrdered.cost +
         ".  It will be topped with:" +
-        pizzaOrdered.toppings
+        pizzaOrdered.toppings +
+        ". The type of pizza is " +
+        pizzaOrdered.pizzasummary.slice(2, 3) +
+        "."
     );
   });
 });
