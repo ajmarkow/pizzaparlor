@@ -22,5 +22,104 @@
     <script src="js/scripts.js"></script>
     <link rel="stylesheet" href="css/stylesheet.css" type="text/css" />
   </head>
-  <body></body>
+  <body class="inverted bebastext">
+    <form>
+      <div id="thegrid">
+        <div class="jumbotron inverted display-2">AJ's Pizza Parlor</div>
+        <div class="container">
+          <div class="row stylethegrid">
+            <h1>pizza size</h1>
+            <select class="form-control greaterindent" id="size">
+              <option value="small">small</option>
+              <option value="large">large</option>
+            </select>
+          </div>
+          <div class="row stylethegrid">
+            <h1>toppings - choose up to 5</h1>
+          </div>
+          <div class="row">
+            <div class="radio greaterindent">
+              <br />
+              <label>
+                <input
+                  type="checkbox"
+                  name="topping"
+                  value="toppingplaceholder"
+                />
+                Radio Button Label
+              </label>
+              <div class="radio">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="topping"
+                    value="toppingplaceholder"
+                  />
+                  Radio Button Label
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="topping"
+                    value="toppingplaceholder"
+                  />
+                  Radio Button Label
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="topping"
+                    value="toppingplaceholder"
+                  />
+                  Radio Button Label
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="topping"
+                    value="toppingplaceholder"
+                  />
+                  Radio Button Label
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="topping"
+                    value="toppingplaceholder"
+                  />
+                  Radio Button Label
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row stylethegrid">
+            <h1>pizza cost</h1>
+          </div>
+          <div class="row">
+            <h2 id="outputforpizzacost" class="greaterindent">test</h2>
+          </div>
+          <div class="row stylethegrid">
+            <h1>order summary</h1>
+          </div>
+          <div class="row">
+            <h2 id="outputforordersummary" class="greaterindent">
+              ordersummary
+            </h2>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row justify-content-center">
+        <input type="submit" value="place your order" />
+      </div>
+    </form>
+  </body>
 </html>
