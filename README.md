@@ -53,3 +53,26 @@ SOFTWARE.\_
 Copyright (c) 2020 **_AJ Markow_**
 
 ### Specifications and Tests
+
+Describe: A function that adds elements into toppings array dependendent on which type of pizza selected.
+Test: Pizza type selected margherita will populate the list with Basil, Secret Garlic Sauce
+Code: Pizza.prototype.setToppings()
+Expect: Pizza.toppings = ['Basil','Secret Garlic Sauce']
+Test passed
+
+Describe: A function that sets cost of the pizza based on the size selected, and inserts this value into an array on the pizza object.
+Test: If small is selected pizza cost will equal 18
+Code: .setCost
+Expect: piza summary array = ["$18"]
+Test passed
+
+Describe: A function that sets an id for the pizza, so multiple pizzas can eventually be ordered
+Test: A new id is assigned
+Code: pizza.assignId()
+Expect: first pizza has an id of 0
+Test Passed
+
+Describe: Code that pulls the cost value from the summary array and passes this value into the cost property of the pizza
+Test: if pizza is set as large, cost is 28 and this cost is set as the value of the cost property.
+Code: populateCost
+Expect: pizza.cost.toEqual(28)

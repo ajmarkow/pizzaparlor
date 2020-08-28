@@ -34,14 +34,6 @@ Pizza.prototype.setToppings = function () {
   }
 };
 
-// if (sizeinput === "large") {
-//   this.cost ="$28";
-//   return (this.cost = "$28");
-// } else {
-//   this.cost.replaceWith("$18");
-//   return (this.cost = "$18");
-// }
-
 // * Interface Logic
 $(document).ready(function () {
   $("form").submit(function (event) {
