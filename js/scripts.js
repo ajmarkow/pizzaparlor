@@ -7,40 +7,41 @@ function Pizza(size, toppings) {
   this.currentId = 0;
 }
 
-pizza.prototype.assignId() = function () {
+var sizeinput = $("#size").val();
+
+Pizza.prototype.assignId = function () {
   this.currentId += 1;
   return this.currentId;
 };
 
 // * Interface Logic
-Pizza.prototype.selectSize = function () {
-  const sizeinput = $("#size").val();
-  switch (sizeinput) {
-    case "small":
-      pizzasummary.push("small");
-      this.size = "small";
-      break;
-    case "large":
-      pizzasummary.push("large");
-      this.size = "large";
-      break;
-    default:
-      this.pizasummary.push("small");
-  }
+// Pizza.prototype.selectSize = function (thepizza) {
+//   if (sizeinput === "small") {
+//     Pizza.size = "small";
+//     Pizza.cost = +5;
+//     thepizza.pizzasummary.push("small");
+//   } else sizeinput === large;
+//   {
+//     Pizza.size = "large";
+//     Pizza.cost = +10;
+//     thepizza.pizzasummary.push("large");
+//   }
+// };
 
-  Pizza.prototype.recordToppings = function () {};
+//   Pizza.prototype.recordToppings = function () {};
 
-  console.log(this.pizasummary);
-};
+//   console.log(this.pizasummary);
+// };
 
 var toppingsarray = ["pepperoni", "bell pepper"];
 
 $(document).ready(function () {
   $("form").submit(function (event) {
     event.preventDefault();
-    let sizeinput = $("#size").val();
     let toppingsselected = toppingsarray;
     let pizzaOrdered = new Pizza(sizeinput, toppingsselected);
-    console.log(pizzaOrdered.size);
+    pizzaOrdered.pizzasummary.push($("#size").val());
+    // pizzaOrdered.selectSize(pizzaOrdered);
+    console.log(pizzaOrdered.pizzasummary);
   });
 });
