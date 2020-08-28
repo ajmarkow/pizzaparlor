@@ -1,7 +1,5 @@
 # _AJ's Pizza Parlor_
 
----
-
 _Pizza ordering application with front end that provides order feedback. Friday, August 28, 2020_
 
 By **_AJ Markow_**
